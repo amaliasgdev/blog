@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+* {
+    font-family: 'Exo 2', sans-serif;
+}
+
+
+h1 {
+    font-size: 8vw;
+    font-weight: bold;
+    font-family: 'Shadows Into Light', cursive;
+    text-shadow: 3px 3px 4px black;
+}
+
+
+.fondo {
+    height: 30vh;
+    background-image: url('https://wallpaperaccess.com/full/1850071.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.botones {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 2px solid #1b045c;
+    border-bottom: 2px solid #1b045c;
+    background: lightblue;
+}
+
+
+.spidy {
+    position: fixed;
+    top: 0;
+    width: 25%;
+}
+
+img {
+    margin-left: 25px;
+    width: 35%;
+    height: auto;
+    display: block;
+}
+
+/* .contenedor {
+    width: 100%;
+    margin-top: 25px;
+    background-image: url('../assets/images/spider-web.png');
+    background-position: center;
+    background-repeat: repeat;
+} */
+
+.contenedor {
+    width: 100%;
+    position: relative;
+}
+
+.contenedor:after {
+    content: "";
+    background: url('../assets/images/spider-web.png');
+    opacity: 0.2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+.wrap {
+    width: 70%;
+    margin: 0 auto;
+    background-color: white;
+    padding: 0 50px;
+}
+
+
+
+footer {
+    margin-top: 25px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    color: white;
+}

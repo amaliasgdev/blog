@@ -1,0 +1,67 @@
+<div class="container mb-5">
+    <div class="row justify-content-center mt-3">
+        <h1 class="text-center">Nuevo Post</h1>
+
+        <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="col-lg-8 col-sm-12">
+            <div class="mb-3">
+                <label class="form-label">Titulo</label>
+                <input type="text" name="title" class="form-control" formControlName="titulo">
+                <p *ngIf="checkErrors('titulo', 'required')" class="error">
+                    Este campo es requerido
+                </p>
+                <p *ngIf="checkErrors('titulo', 'minlength')" class="error">
+                    Este campo debe tener al menos 5 caracteres
+                </p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Texto</label>
+                <textarea name="body" class="form-control" formControlName="texto"></textarea>
+                <p *ngIf="checkErrors('texto', 'required')" class="error">
+                    Este campo es requerido
+                </p>
+                <p *ngIf="checkErrors('texto', 'minlength')" class="error">
+                    Este campo debe tener al menos 10 caracteres
+                </p>
+                <p *ngIf="checkErrors('texto', 'maxlength')" class="error">
+                    Este campo debe tener como mucho 250 caracteres
+                </p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Autor</label>
+                <input type="text" name="author" class="form-control" formControlName="autor">
+                <p *ngIf="checkErrors('autor', 'required')" class="error">
+                    Este campo es requerido
+                </p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input type="text" name="author" class="form-control" formControlName="imagen">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Fecha (YYYY-MM-DD)</label>
+                <input type="text" name="createdAt" class="form-control" formControlName="fecha">
+                <p *ngIf="checkErrors('fecha', 'required')" class="error">
+                    Este campo es requerido
+                </p>
+            </div>
+            <div class="mb-3">
+                <label class="form-label d-block">Categoria</label>
+                <select name="category" class="form-select" formControlName="categoria">
+                    <option value="Reseñas">Reseñas</option>
+                    <option value="Noticias">Noticias</option>
+                    <option value="Entrevistas">Entrevistas</option>
+                    <option value="Articulos">Artículos</option>
+                    <option value="Eventos">Eventos</option>
+                </select>
+                <p *ngIf="checkErrors('categoria', 'required')" class="error">
+                    Este campo es requerido
+                </p>
+            </div>
+
+            <input type="submit" value="Enviar" class="btn btn-info w-100" [disabled]="!formulario.valid">
+
+        </form>
+
+
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<div id="top" class="opciones">
+    <select (change)="onChange($event)" class="form-select w-25 mt-3">
+        <option value="" default>Elige una categoria</option>
+        <option *ngFor=" let categoria of categorias" [value]="categoria">
+            {{categoria|titlecase}}
+        </option>
+    </select>
+</div>
+
+<section class="posts pt-3 pb-5">
+    <article *ngFor="let post of arrPosts; let indice=index">
+        <h3>{{post.titulo}}</h3>
+        <p>{{post.texto}}</p>
+        <p><span>AUTOR:</span> {{post.autor|titlecase}}</p>
+        <p><span>CATEGORÍA:</span> {{post.categoria | titlecase}} </p>
+        <p>FECHA: {{ getFecha(post.fecha) }}</p>
+        <div class="imagen">
+            <img [src]="post.imagen">
+        </div>
+        <hr>
+    </article>
+</section>
+
+
+<div class="arriba">
+    <a href="#top">
+        <div class="super"></div>
+    </a>
+</div>
